@@ -48,6 +48,8 @@ Here we are visualizing trained data with learning curve using **iteration = 100
 
 In this figure, blue dots represents data set with size of house in X-axis and price of house in Y-axis. Red line represents for learning curve of trained model. This way we can see that how model being trained.
 
+~~-----------------------------------------------------------------------------------------------------------------------------~~
+
 ## Logistic Regression Function :
 
   In this section, we will develop logistic regression function that can handle to classify with multiple features. For more better result I will use more feature with square and root combinations so that we can fit non-linear decision boundary.
