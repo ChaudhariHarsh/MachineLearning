@@ -87,3 +87,7 @@ Here we are visualizing trained data with learning curve using **iteration = 100
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/LogRe.png)
 
 In this figure, green dots represents correctly classified for **student admitted** to exam where as yello dot represents for correctly classified for **student not admitted** to exam. Red dot represents for not **currectly classified**. This way we can see that how logistic regression model being trained.
+
+Or We can see as below,
+
+![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/LogisticRe.png)
