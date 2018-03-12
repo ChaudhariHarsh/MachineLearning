@@ -54,6 +54,8 @@ def cost_function(X, Y, W, b, method):
         error = np.sum(cost /(m),axis=1)
     else:
         print "Error In Cost Function : No method Found"
+    assert(hyponthsis_function.shape == (1,m)),"Assertation Error in hyponthsis_function at cost function "
+    
     return hyponthsis_function, cost, error
 
 
