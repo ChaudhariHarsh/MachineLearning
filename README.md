@@ -1,10 +1,12 @@
 # ```MachineLearning :``` 
-In this repository I will develop functions for linear regression, logistic regression, neural network.
+
+In this repository I will develop functions for linear regression, logistic regression, neural network. This all function will be without regulization part, so we may endup with overfit model or we can say "high variance".
 
 ## ```Linear Regression Function :```
   In this section, we will develop linear regression function that can handle to predict response with multiple features. For more better result I will use more feature with square and root combinations so that we can fit non linear learning curve.
 
 As per general naming convention for machine learning, here we presents common terminalogy.
+
 ```
 X = Features,
 Y = Resposes,
@@ -24,7 +26,7 @@ As we know `small letter x, w ` means scaller where as `big letter X, W ` means 
 
 > cost = ( h(x) - y )**2
 
-we use squared error cost function in this linear regression example.
+we use squared error cost function in this linear regression example because its most commonly used for such task.
 
 ### Gradient Decent :
 
@@ -36,7 +38,11 @@ This is gradient of cost function with respect to bias(b), for gradient for cost
 
 ### Weight Update : 
 
+- Updating Bias with learning rate α,
+
 > b := b - (α / 2 * m) (**∑** (h(x) - y))
+
+Updating weight W with learning rate α,
 
 > w[ i ] := w[ i ] - (α / 2 * m) (**∑** (h(x) - y)* x( i ))
 
