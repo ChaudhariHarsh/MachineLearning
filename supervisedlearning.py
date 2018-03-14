@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-
+## Initialize Parameter W and b as zeros : 
 def initialize_parameters(n_x,method):
     ##This function is for initialize All parameter    
     parameters = {}
@@ -29,6 +29,7 @@ def initialize_parameters(n_x,method):
 #parameters = initialize_parameters(5,method="Logistic")
 #print parameters
 
+## Feature normalize :
 def feature_normalization(X):
     (row, col) = X.shape
     for f in range(row):
@@ -39,7 +40,7 @@ def feature_normalization(X):
     
     return X
 
-
+## Cost function
 def cost_function(X, Y, W, b, method):
     ## where X shape is (input_size, no_examples)
     (n,m) = X.shape
@@ -58,7 +59,7 @@ def cost_function(X, Y, W, b, method):
     
     return hyponthsis_function, cost, error
 
-
+## Gradient deacent :
 def gradient_descent(X, Y, W, b, itertions, learning_rate, method):
     (n,m) = X.shape
     for iteration in range(itertions):
@@ -84,7 +85,7 @@ def gradient_descent(X, Y, W, b, itertions, learning_rate, method):
     assert(dW.shape == W.shape)
     return W,b
 
-
+## Visualization function :
 def visualization(x, y, hf):
     fig, handle = plt.subplots()
     handle.plot(x, y, "yo", x, hf, "--k")
@@ -93,7 +94,7 @@ def visualization(x, y, hf):
     fig.show()
     return None
 
-
+## Linear regression function call : 
 def linear_regression(X, Y, itertions, learning_rate, method = "Linear"):
     
     (row, col) = X.shape
@@ -108,7 +109,7 @@ def linear_regression(X, Y, itertions, learning_rate, method = "Linear"):
     
     return hyponthsis_function, error, W, b
           
-
+## Logistic regression cost function : 
 def logistic_regression(X, Y, itertions, learning_rate, method):
     
     (row, col) = X.shape
