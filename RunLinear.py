@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-from supervisedlearning import *
+from supervisedlearning import *       ## This is our supervised learning function file
 
 
 def linearCall():
