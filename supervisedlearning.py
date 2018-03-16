@@ -46,12 +46,12 @@ def cost_function(X, Y, W, b, method):
     (n,m) = X.shape
     if method == "Linear":
         hyponthsis_function = np.dot(W,X) + b 
-        cost = np.square(hyponthsis_function - Y)
+        cost = np.square(hyponthsis_function - Y) + lambda * np.sum(W**2)
         error = np.sum(cost /(2*m),axis=1)
     elif method == "Logistic":
         Z = np.dot(W,X) + b 
         hyponthsis_function = 1/( 1 + np.exp(-Z))
-        cost = - np.dot(Y,np.log(hyponthsis_function.T)) - np.dot(1 - Y,np.log(1 - hyponthsis_function.T)) 
+        cost = - np.dot(Y,np.log(hyponthsis_function.T)) - np.dot(1 - Y,np.log(1 - hyponthsis_function.T)) + lambda * np.sum(W**2)
         error = np.sum(cost /(m),axis=1)
     else:
         print "Error In Cost Function : No method Found"
@@ -62,6 +62,7 @@ def cost_function(X, Y, W, b, method):
 ## Gradient deacent :
 def gradient_descent(X, Y, W, b, itertions, learning_rate, method):
     (n,m) = X.shape
+    lambda = 1
     for iteration in range(itertions):
         if method == "Linear":
             dJ = np.dot(W,X) + b - Y
@@ -77,8 +78,8 @@ def gradient_descent(X, Y, W, b, itertions, learning_rate, method):
         else:
             print "Error in gradient descent: No method Found"
         #print hf.T, Y.T
-        W = W - learning_rate * dW
-        b = b - learning_rate * db
+        W = W * (1 - lambda/m) - learning_rate * dW
+        b = b * (1 - lambda/m) - learning_rate * db
         
     assert(dJ.shape == (W.shape[0],X.shape[1]))
     assert(db.shape == b.shape)
