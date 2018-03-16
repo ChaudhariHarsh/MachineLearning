@@ -14,6 +14,7 @@ W = weights - Learning Parameter,
 b = bias - Learning Parameter,
 α = Learning Rate,
 m = Training set size
+lambda = regularization parameter
 ```
 
 ### Hyponthsis function :
@@ -24,27 +25,27 @@ m = Training set size
 
 ### Cost Functoin :
 
-> cost = ( h(x) - y )**2
+> cost = ( h(x) - y )**2  + lambda * np.sum(W**2)
 
 - we use squared error cost function in this linear regression example because its most commonly used for such task.
 
 ### Gradient Decent :
 
-> grad J = 2 * (h(x) - y)
+> grad J = 2 * (h(x) - y) 
 
 - This is gradient of cost function with respect to bias(b), for gradient for cost with respect to weight(w) we can derive as follow.
 
-> grad J = 2 * x * (h(x) - y)
+> grad J = 2 * x * (h(x) - y) + + lambda * W
 
 ### Weight Update : 
 
 - Updating Bias with learning rate α,
 
-> b := b - (α / 2 * m) (**∑** (h(x) - y))
+> b := b * (1 - lambda/m) - (α / 2 * m) (**∑** (h(x) - y))
 
 - Updating weight W with learning rate α,
 
-> w[ i ] := w[ i ] - (α / 2 * m) (**∑** (h(x) - y)* x( i ))
+> w[ i ] := w[ i ] * (1 - lambda/m) - (α / 2 * m) (**∑** (h(x) - y)* x( i ))
 
 ### Visualization :
 
@@ -68,7 +69,7 @@ m = Training set size
 
 ### Cost Functoin :
 
-> cost = - y * log(h(x)) - (1 - y) * log(1-h(x))
+> cost = - y * log(h(x)) - (1 - y) * log(1-h(x)) + lambda * np.sum(W**2)
 
 - we use sigmoid function in this logistic regression example.
 
@@ -78,13 +79,13 @@ m = Training set size
 
 - This is gradient of cost function with respect to bias(b), for gradient for cost with respect to weight(w) we can derive as follow.
 
-> grad J = 2 * x * (cost - y)
+> grad J = 2 * x * (cost - y) + lambda * W
 
 ### Weight Update : 
 
-> b := b - (α / 2 * m) (**∑** grad J)
+> b := b * (1 - lambda/m) - (α / 2 * m) (**∑** grad J)
 
-> w[ i ] := w[ i ] - (α / 2 * m) (**∑** grad J * x( i ))
+> w[ i ] := w[ i ] * (1 - lambda/m) - (α / 2 * m) (**∑** grad J * x( i ))
 
 ### Visualization :
 
