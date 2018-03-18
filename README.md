@@ -49,7 +49,7 @@ lambda = regularization parameter
 
 ### Visualization :
 
-- Here we are visualizing trained data with learning curve using **iteration = 1000** and **learning_rate = 0.01**.
+- Here we are visualizing trained data with learning curve using **iteration = 1000** and **learning_rate = 0.01**. :sunglasses:
 
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/LinearRe.png)
 
@@ -89,7 +89,7 @@ lambda = regularization parameter
 
 ### Visualization :
 
-- Here we are visualizing trained data with learning curve using **iteration = 1000** and **learning_rate = 0.01**.
+- Here we are visualizing trained data with learning curve using **iteration = 1000** and **learning_rate = 0.01** :sweat_smile: 
 
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/LogRe.png)
 
@@ -98,3 +98,12 @@ lambda = regularization parameter
 - Or We can see as below,
 
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/LogisticRe.png)
+
+
+## Neural Netowrk implementation : 
+- I have sucessufully implemented neural network for above example of logistic regression. In here i used same data file.
+
+### Visualization :
+- this is exectly same results but different colours :laughing: and its with 100% accuracy :relieved: .
+
+![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/neuralnet.png)
