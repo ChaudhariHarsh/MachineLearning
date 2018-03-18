@@ -25,7 +25,7 @@ lambda = regularization parameter
 
 ### Cost Functoin :
 
-> cost = ( h(x) - y )**2  + lambda * np.sum(W**2)
+> cost = ( h(x) - y )^2  + lambda * np.sum(W**2)
 
 - we use squared error cost function in this linear regression example because its most commonly used for such task.
 
@@ -35,7 +35,7 @@ lambda = regularization parameter
 
 - This is gradient of cost function with respect to bias(b), for gradient for cost with respect to weight(w) we can derive as follow.
 
-> grad J = 2 * x * (h(x) - y) + + lambda * W
+> grad J = 2 * x * (h(x) - y) + lambda * W
 
 ### Weight Update : 
 
