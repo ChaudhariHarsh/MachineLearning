@@ -108,6 +108,4 @@ lambda = regularization parameter
 
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/neuralnet.png)
 
-- This is visualizarion figure with normalization implementation.
 
-![Alt text](https://github.com/ChaudhariHarsh/Housing-Price-prediction/blob/master/LinearReg.png)
