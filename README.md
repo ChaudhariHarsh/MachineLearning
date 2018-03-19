@@ -100,7 +100,7 @@ lambda = regularization parameter
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/LogisticRe.png)
 
 
-## Neural Netowrk implementation : 
+## ```Neural Netowrk implementation :``` 
 - I have sucessufully implemented neural network for above example of logistic regression. In here i used same data file.
 
 ### Visualization :
