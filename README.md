@@ -104,6 +104,10 @@ lambda = regularization parameter
 - I have sucessufully implemented neural network for above example of logistic regression. In here i used same data file.
 
 ### Visualization :
-- this is exectly same results but different colours and its with *100% accuracy* .
+- this is exectly same results but different colour.
 
 ![Alt text](https://github.com/ChaudhariHarsh/MachineLearning/blob/master/neuralnet.png)
+
+- This is visualizarion figure with normalization implementation.
+
+![Alt text](https://github.com/ChaudhariHarsh/Housing-Price-prediction/blob/master/LinearReg.png)
