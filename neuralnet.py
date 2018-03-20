@@ -1,18 +1,24 @@
+''' This is neural network function file
+    In this file I implemented one example
+    '''
 
 import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+# Sigmoid function : 
 def sigmoid(Z):
     A = 1/( 1 + np.exp(-Z))
     return A
 
+# Function to get network size : 
 def network_size(X, Y):
     n_x = X.shape[0] 
     n_h = 4
     n_y = Y.shape[0]
     return (n_x, n_h, n_y)
 
+# Initialize W and b as per network size :
 def initialize_parameters(n_x, n_h, n_y):
     W1 = np.random.randn(n_h,n_x) * 0.01
     b1 = np.zeros((n_h,1))
@@ -28,6 +34,7 @@ def initialize_parameters(n_x, n_h, n_y):
                   "b2": b2}
     return parameters
 
+# Feature normalize function range [0,1]
 def feature_normalization(X):
     (row, col) = X.shape
     for f in range(row):
@@ -37,6 +44,7 @@ def feature_normalization(X):
     assert(X.shape==(row,col)),"Error in size match : feature_normalization"
     return X
 
+# Forward propogation Intiuation :
 def forward_prop(X, parameters):
     # Retrieve each parameter W and b
     W1 = parameters["W1"]
@@ -55,7 +63,7 @@ def forward_prop(X, parameters):
              "A2": A2}
     return A2, cache
 
-
+# Cost computing Function : 
 def compute_cost(A2, Y, parameters):
     m = Y.shape[1]
     logprobs = np.multiply(np.log(A2),Y) + np.multiply(np.log(1-A2),(1-Y))
@@ -65,6 +73,7 @@ def compute_cost(A2, Y, parameters):
     
     return cost
 
+# Back propogation function :
 def backward_propagation(parameters, cache, X, Y):
     m = X.shape[1]
     # First, retrieve W1 and W2
@@ -87,6 +96,7 @@ def backward_propagation(parameters, cache, X, Y):
              "db2": db2}
     return grads
 
+# Parameter undate with gradient descent :
 def update_parameters(parameters, grads, learning_rate = 0.8):
     # Retrieve each parameter
     W1 = parameters["W1"] 
@@ -109,11 +119,13 @@ def update_parameters(parameters, grads, learning_rate = 0.8):
                   "b2": b2}
     return parameters
 
+# Prediction function :
 def predict(parameters, X):
     A2, cache = forward_prop(X, parameters)
     predictions = 1*(A2 > 0.5)
     return predictions
 
+# Final Neural Network function that calls other function : 
 def nn_model(X, Y, n_h, num_iterations = 1000, show_cost=False):
     n_x,n_h,n_y = network_size(X, Y)
     # Initialize parameters
@@ -141,7 +153,7 @@ def nn_model(X, Y, n_h, num_iterations = 1000, show_cost=False):
     return parameters
 
 
-
+# Load data and call neural network function :
 def loadData():
     ''' Loading data as X as features and Y as labels
     from our data file and convert it to matrix '''
